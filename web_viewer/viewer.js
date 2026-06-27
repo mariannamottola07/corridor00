@@ -44,9 +44,9 @@ const ASSET_PATHS = {
   zombie: "../animated_injured_zombie_crawling_loop/scene.gltf",
 };
 const MUSIC_PATH = "../Hollow%20Framework.mp3";
-const SCENE_FETCH_TIMEOUT_MS = 15000;
-const ASSET_LOAD_TIMEOUT_MS = 10000;
-const TEXTURE_LOAD_TIMEOUT_MS = 8000;
+const SCENE_FETCH_TIMEOUT_MS = 30000;
+const ASSET_LOAD_TIMEOUT_MS = 120000;
+const TEXTURE_LOAD_TIMEOUT_MS = 120000;
 
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x07080a);
@@ -1747,7 +1747,7 @@ async function bootstrapScene() {
   buildAtmosphere();
   buildReferenceMood();
 
-  setStatus("Caricamento asset glTF locali...");
+  setStatus("Caricamento modelli 3D e texture. Su Render puo richiedere un po...");
   await buildProps();
 
   ready = true;
