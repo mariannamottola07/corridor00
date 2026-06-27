@@ -306,6 +306,49 @@
     </div>
   </div>
 
+  <script>
+    window.addEventListener("error", (event) => {
+      const status = document.getElementById("status");
+      const errorBox = document.getElementById("errorBox");
+      const message = event.message || "Errore JavaScript non specificato.";
+      if (status) {
+        status.textContent = `Errore caricamento viewer: ${message}`;
+        status.style.color = "#ffd9df";
+      }
+      if (errorBox) {
+        errorBox.style.display = "block";
+        errorBox.textContent = `Dettaglio: ${message}`;
+      }
+    });
+
+    window.addEventListener("unhandledrejection", (event) => {
+      const status = document.getElementById("status");
+      const errorBox = document.getElementById("errorBox");
+      const reason = event.reason?.message || String(event.reason || "Promise rifiutata senza dettaglio.");
+      if (status) {
+        status.textContent = `Errore caricamento viewer: ${reason}`;
+        status.style.color = "#ffd9df";
+      }
+      if (errorBox) {
+        errorBox.style.display = "block";
+        errorBox.textContent = `Dettaglio: ${reason}`;
+      }
+    });
+
+    window.setTimeout(() => {
+      const status = document.getElementById("status");
+      const errorBox = document.getElementById("errorBox");
+      if (status?.textContent === "In attesa del caricamento della scena...") {
+        const message = "viewer.js non e partito. Probabile errore di import o file non servito da Render.";
+        status.textContent = message;
+        status.style.color = "#ffd9df";
+        if (errorBox) {
+          errorBox.style.display = "block";
+          errorBox.textContent = "Apri DevTools > Console/Network e controlla viewer.js, three.module.js e i file in vendor/three.";
+        }
+      }
+    }, 5000);
+  </script>
   <script type="module" src="./viewer.js"></script>
 </body>
 

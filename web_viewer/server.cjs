@@ -19,6 +19,7 @@ const mimeTypes = {
   ".gltf": "model/gltf+json",
   ".glb": "model/gltf-binary",
   ".bin": "application/octet-stream",
+  ".wasm": "application/wasm",
   ".md": "text/markdown; charset=utf-8",
 };
 
