@@ -34,6 +34,12 @@ function safeResolve(urlPath) {
 }
 
 const server = http.createServer((req, res) => {
+  if ((req.url || "/").split("?")[0] === "/") {
+    res.writeHead(302, { "Location": "/web_viewer/index.html", "Cache-Control": "no-store" });
+    res.end();
+    return;
+  }
+
   const filePath = safeResolve(req.url || "/");
   if (!filePath) {
     res.writeHead(403, { "Content-Type": "text/plain; charset=utf-8" });
