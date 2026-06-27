@@ -44,6 +44,9 @@ const ASSET_PATHS = {
   zombie: "../animated_injured_zombie_crawling_loop/scene.gltf",
 };
 const MUSIC_PATH = "../Hollow%20Framework.mp3";
+const SCENE_FETCH_TIMEOUT_MS = 15000;
+const ASSET_LOAD_TIMEOUT_MS = 10000;
+const TEXTURE_LOAD_TIMEOUT_MS = 8000;
 
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0x07080a);
@@ -93,6 +96,8 @@ const zombieActors = [];
 const assetCache = new Map();
 let sceneData = null;
 let ready = false;
+let bootstrapPromise = null;
+let animationStarted = false;
 let flashlightEnabled = true;
 let musicWanted = true;
 let interactiveDoor = null;
@@ -100,7 +105,7 @@ let zombieMaterialTemplate = null;
 
 const ambientTrack = new Audio(MUSIC_PATH);
 ambientTrack.loop = true;
-ambientTrack.preload = "auto";
+ambientTrack.preload = "metadata";
 ambientTrack.volume = 0.34;
 
 const flashlight = new THREE.SpotLight(0xf4f1de, 12, 12, Math.PI / 6, 0.55, 1.9);
@@ -140,6 +145,15 @@ function showError(message) {
 
 function hideOverlay() {
   overlayEl.style.display = "none";
+}
+
+function withTimeout(promise, timeoutMs, label) {
+  return Promise.race([
+    promise,
+    new Promise((_, reject) => {
+      window.setTimeout(() => reject(new Error(`${label} non ha risposto entro ${Math.round(timeoutMs / 1000)} secondi.`)), timeoutMs);
+    }),
+  ]);
 }
 
 function showOverlay(message = "Premi Entra per tornare nel corridoio.") {
@@ -1130,7 +1144,7 @@ async function loadAsset(name, url) {
 
   let asset;
   try {
-    asset = await loader.loadAsync(url);
+    asset = await withTimeout(loader.loadAsync(url), ASSET_LOAD_TIMEOUT_MS, `Asset ${name}`);
   } catch (error) {
     console.warn(`Asset ${name} non caricato, uso fallback procedurale.`, error);
     const fallback = createFallbackAsset(name);
@@ -1259,7 +1273,7 @@ function createFallbackAsset(name) {
 }
 
 async function buildProps() {
-  const response = await fetch("../Scene_Exports/scene_entities.json");
+  const response = await withTimeout(fetch("../Scene_Exports/scene_entities.json"), SCENE_FETCH_TIMEOUT_MS, "Scene_Exports/scene_entities.json");
   if (!response.ok) {
     throw new Error(`Impossibile leggere scene_entities.json (${response.status}).`);
   }
@@ -1355,27 +1369,39 @@ async function loadZombieMaterialTemplate() {
     return zombieMaterialTemplate;
   }
 
-  const [diffuse, normal] = await Promise.all([
-    textureLoader.loadAsync("../animated_injured_zombie_crawling_loop/textures/ZombieGirl_Material_diffuse.png"),
-    textureLoader.loadAsync("../animated_injured_zombie_crawling_loop/textures/ZombieGirl_Material_normal.png"),
-  ]);
+  try {
+    const [diffuse, normal] = await Promise.all([
+      withTimeout(textureLoader.loadAsync("../animated_injured_zombie_crawling_loop/textures/ZombieGirl_Material_diffuse.png"), TEXTURE_LOAD_TIMEOUT_MS, "Texture zombie diffuse"),
+      withTimeout(textureLoader.loadAsync("../animated_injured_zombie_crawling_loop/textures/ZombieGirl_Material_normal.png"), TEXTURE_LOAD_TIMEOUT_MS, "Texture zombie normal"),
+    ]);
 
-  diffuse.colorSpace = THREE.SRGBColorSpace;
-  diffuse.flipY = false;
-  diffuse.needsUpdate = true;
-  normal.flipY = false;
-  normal.needsUpdate = true;
+    diffuse.colorSpace = THREE.SRGBColorSpace;
+    diffuse.flipY = false;
+    diffuse.needsUpdate = true;
+    normal.flipY = false;
+    normal.needsUpdate = true;
 
-  zombieMaterialTemplate = new THREE.MeshStandardMaterial({
-    map: diffuse,
-    normalMap: normal,
-    color: 0xffffff,
-    roughness: 0.88,
-    metalness: 0.02,
-    transparent: true,
-    alphaTest: 0.08,
-    side: THREE.DoubleSide,
-  });
+    zombieMaterialTemplate = new THREE.MeshStandardMaterial({
+      map: diffuse,
+      normalMap: normal,
+      color: 0xffffff,
+      roughness: 0.88,
+      metalness: 0.02,
+      transparent: true,
+      alphaTest: 0.08,
+      side: THREE.DoubleSide,
+    });
+  } catch (error) {
+    console.warn("Texture zombie non caricate, uso materiale procedurale.", error);
+    zombieMaterialTemplate = new THREE.MeshStandardMaterial({
+      color: 0x4b161b,
+      emissive: 0x120305,
+      emissiveIntensity: 0.18,
+      roughness: 0.92,
+      metalness: 0.02,
+      side: THREE.DoubleSide,
+    });
+  }
   zombieMaterialTemplate.needsUpdate = true;
   return zombieMaterialTemplate;
 }
@@ -1728,9 +1754,25 @@ async function bootstrapScene() {
   setStatus("Scena pronta. Premi Entra per iniziare.");
 }
 
+function ensureSceneReady() {
+  if (!bootstrapPromise) {
+    bootstrapPromise = bootstrapScene();
+  }
+  return bootstrapPromise;
+}
+
+function startAnimationLoop() {
+  if (animationStarted) {
+    return;
+  }
+
+  animationStarted = true;
+  animate();
+}
+
 async function startExperience() {
   if (ready) {
-    await ensureMusicStarted();
+    ensureMusicStarted();
     hideOverlay();
     controls.lock();
     return;
@@ -1739,14 +1781,14 @@ async function startExperience() {
   startBtn.disabled = true;
   startBtn.textContent = "Caricamento...";
   try {
-    await ensureMusicStarted();
-    await bootstrapScene();
-    animate();
+    ensureMusicStarted();
+    await ensureSceneReady();
+    startAnimationLoop();
     hideOverlay();
     controls.lock();
   } catch (error) {
     console.error(error);
-    showError("Il viewer realtime non e riuscito a inizializzare la scena. Avvialo tramite il server locale `node web_viewer/server.cjs` o `start_web_viewer.cmd` e verifica che i file glTF siano presenti.");
+    showError(`Il viewer realtime non e riuscito a inizializzare la scena: ${error.message || error}.`);
     startBtn.disabled = false;
     startBtn.textContent = "Riprova";
   }
@@ -1785,4 +1827,19 @@ window.addEventListener("keyup", (event) => onKey(event, false));
 onResize();
 flashlight.visible = flashlightEnabled;
 syncMusicButton();
+
+startBtn.disabled = true;
+startBtn.textContent = "Caricamento...";
+ensureSceneReady()
+  .then(() => {
+    startAnimationLoop();
+    startBtn.disabled = false;
+    startBtn.textContent = "Entra";
+  })
+  .catch((error) => {
+    console.error(error);
+    showError(`Il viewer realtime non e riuscito a inizializzare la scena: ${error.message || error}.`);
+    startBtn.disabled = false;
+    startBtn.textContent = "Riprova";
+  });
 
