@@ -1,0 +1,11 @@
+Model Information:
+* title:	Worn Steel Door
+* source:	https://sketchfab.com/3d-models/worn-steel-door-ced95830bb3e4547ad3d1e208c34a00b
+* author:	Maycho (https://sketchfab.com/feliperceo)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Worn Steel Door" (https://sketchfab.com/3d-models/worn-steel-door-ced95830bb3e4547ad3d1e208c34a00b) by Maycho (https://sketchfab.com/feliperceo) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

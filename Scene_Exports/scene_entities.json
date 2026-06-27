@@ -1,0 +1,1266 @@
+{
+  "scene_name": "PROC_HORROR_FNAF",
+  "generated_at": "2026-04-18T17:31:12",
+  "project_root": "C:\\Users\\maria\\Documents\\Appunti H\\Web Design\\Antigravity progetti\\3dweb",
+  "seed": 1987,
+  "animation_frame_range": [
+    1,
+    240
+  ],
+  "assets": [
+    {
+      "asset_key": "vending_machine",
+      "source_path": "realistic_vending_machine__3d_model\\scene.glb",
+      "template_root": "TEMPLATE_vending_machine"
+    },
+    {
+      "asset_key": "wheelchair",
+      "source_path": "wheel_chair\\scene.gltf",
+      "template_root": "TEMPLATE_wheelchair"
+    },
+    {
+      "asset_key": "chair_a",
+      "source_path": "chair\\scene.gltf",
+      "template_root": "TEMPLATE_chair_a"
+    },
+    {
+      "asset_key": "chair_b",
+      "source_path": "chair (1)\\scene.gltf",
+      "template_root": "TEMPLATE_chair_b"
+    }
+  ],
+  "entities": [
+    {
+      "id": "corridorfloor_001",
+      "name": "CorridorFloor",
+      "category": "corridor_floor",
+      "asset_type": "procedural_geometry",
+      "source_path": null,
+      "transform": {
+        "location": [
+          0.0,
+          14.0,
+          -0.07
+        ],
+        "rotation_euler": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale": [
+          1.45,
+          14.0,
+          0.07
+        ]
+      },
+      "dimensions": [
+        2.9,
+        28.0,
+        0.14
+      ],
+      "state": {}
+    },
+    {
+      "id": "corridorceiling_002",
+      "name": "CorridorCeiling",
+      "category": "corridor_ceiling",
+      "asset_type": "procedural_geometry",
+      "source_path": null,
+      "transform": {
+        "location": [
+          0.0,
+          14.0,
+          3.32
+        ],
+        "rotation_euler": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale": [
+          1.45,
+          14.0,
+          0.07
+        ]
+      },
+      "dimensions": [
+        2.9,
+        28.0,
+        0.14
+      ],
+      "state": {}
+    },
+    {
+      "id": "corridorwall_left_003",
+      "name": "CorridorWall_Left",
+      "category": "corridor_wall",
+      "asset_type": "procedural_geometry",
+      "source_path": null,
+      "transform": {
+        "location": [
+          -1.54,
+          14.0,
+          1.625
+        ],
+        "rotation_euler": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale": [
+          0.09,
+          14.0,
+          1.625
+        ]
+      },
+      "dimensions": [
+        0.18,
+        28.0,
+        3.25
+      ],
+      "state": {}
+    },
+    {
+      "id": "corridorwall_right_front_004",
+      "name": "CorridorWall_Right_Front",
+      "category": "corridor_wall",
+      "asset_type": "procedural_geometry",
+      "source_path": null,
+      "transform": {
+        "location": [
+          1.54,
+          9.9725,
+          1.625
+        ],
+        "rotation_euler": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale": [
+          0.09,
+          9.9725,
+          1.625
+        ]
+      },
+      "dimensions": [
+        0.18,
+        19.945,
+        3.25
+      ],
+      "state": {}
+    },
+    {
+      "id": "corridorwall_right_back_005",
+      "name": "CorridorWall_Right_Back",
+      "category": "corridor_wall",
+      "asset_type": "procedural_geometry",
+      "source_path": null,
+      "transform": {
+        "location": [
+          1.54,
+          24.7475,
+          1.625
+        ],
+        "rotation_euler": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale": [
+          0.09,
+          3.2525,
+          1.625
+        ]
+      },
+      "dimensions": [
+        0.18,
+        6.505,
+        3.25
+      ],
+      "state": {}
+    },
+    {
+      "id": "corridorwall_end_006",
+      "name": "CorridorWall_End",
+      "category": "corridor_wall",
+      "asset_type": "procedural_geometry",
+      "source_path": null,
+      "transform": {
+        "location": [
+          0.0,
+          28.09,
+          1.625
+        ],
+        "rotation_euler": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "dimensions": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "state": {}
+    },
+    {
+      "id": "secretroomfloor_007",
+      "name": "SecretRoomFloor",
+      "category": "secret_room_floor",
+      "asset_type": "procedural_geometry",
+      "source_path": null,
+      "transform": {
+        "location": [
+          3.64,
+          20.72,
+          -0.06
+        ],
+        "rotation_euler": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale": [
+          2.1,
+          2.75,
+          0.06
+        ]
+      },
+      "dimensions": [
+        4.2,
+        5.5,
+        0.12
+      ],
+      "state": {}
+    },
+    {
+      "id": "secretroomceiling_008",
+      "name": "SecretRoomCeiling",
+      "category": "secret_room_ceiling",
+      "asset_type": "procedural_geometry",
+      "source_path": null,
+      "transform": {
+        "location": [
+          3.64,
+          20.72,
+          3.16
+        ],
+        "rotation_euler": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale": [
+          2.1,
+          2.75,
+          0.06
+        ]
+      },
+      "dimensions": [
+        4.2,
+        5.5,
+        0.12
+      ],
+      "state": {}
+    },
+    {
+      "id": "secretroomwall_right_009",
+      "name": "SecretRoomWall_Right",
+      "category": "secret_room_wall",
+      "asset_type": "procedural_geometry",
+      "source_path": null,
+      "transform": {
+        "location": [
+          5.74,
+          20.72,
+          1.55
+        ],
+        "rotation_euler": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale": [
+          0.09,
+          2.75,
+          1.55
+        ]
+      },
+      "dimensions": [
+        0.18,
+        5.5,
+        3.1
+      ],
+      "state": {}
+    },
+    {
+      "id": "secretroomwall_back_010",
+      "name": "SecretRoomWall_Back",
+      "category": "secret_room_wall",
+      "asset_type": "procedural_geometry",
+      "source_path": null,
+      "transform": {
+        "location": [
+          3.64,
+          23.56,
+          1.55
+        ],
+        "rotation_euler": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale": [
+          2.19,
+          0.09,
+          1.55
+        ]
+      },
+      "dimensions": [
+        4.38,
+        0.18,
+        3.1
+      ],
+      "state": {}
+    },
+    {
+      "id": "secretroomwall_front_011",
+      "name": "SecretRoomWall_Front",
+      "category": "secret_room_wall",
+      "asset_type": "procedural_geometry",
+      "source_path": null,
+      "transform": {
+        "location": [
+          3.64,
+          17.88,
+          1.55
+        ],
+        "rotation_euler": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale": [
+          2.19,
+          0.09,
+          1.55
+        ]
+      },
+      "dimensions": [
+        4.38,
+        0.18,
+        3.1
+      ],
+      "state": {}
+    },
+    {
+      "id": "secretdoor_012",
+      "name": "SecretDoor",
+      "category": "secret_room_door",
+      "asset_type": "procedural_door",
+      "source_path": null,
+      "transform": {
+        "location": [
+          1.5,
+          20.72,
+          1.125
+        ],
+        "rotation_euler": [
+          0.0,
+          -0.0,
+          0.6458
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "dimensions": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "state": {
+        "door_state": "half_open",
+        "material": "rusted_metal"
+      }
+    },
+    {
+      "id": "ceilinglight_01_013",
+      "name": "CeilingLight_01",
+      "category": "ceiling_light",
+      "asset_type": "procedural_light_fixture",
+      "source_path": null,
+      "transform": {
+        "location": [
+          0.0,
+          2.8,
+          3.17
+        ],
+        "rotation_euler": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "dimensions": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "state": {
+        "power_state": "ON",
+        "animation": "static"
+      }
+    },
+    {
+      "id": "ceilinglight_02_014",
+      "name": "CeilingLight_02",
+      "category": "ceiling_light",
+      "asset_type": "procedural_light_fixture",
+      "source_path": null,
+      "transform": {
+        "location": [
+          0.0,
+          6.55,
+          3.17
+        ],
+        "rotation_euler": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "dimensions": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "state": {
+        "power_state": "BROKEN",
+        "animation": "irregular_flicker"
+      }
+    },
+    {
+      "id": "ceilinglight_03_015",
+      "name": "CeilingLight_03",
+      "category": "ceiling_light",
+      "asset_type": "procedural_light_fixture",
+      "source_path": null,
+      "transform": {
+        "location": [
+          0.0,
+          10.3,
+          3.17
+        ],
+        "rotation_euler": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "dimensions": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "state": {
+        "power_state": "OFF",
+        "animation": "static"
+      }
+    },
+    {
+      "id": "ceilinglight_04_016",
+      "name": "CeilingLight_04",
+      "category": "ceiling_light",
+      "asset_type": "procedural_light_fixture",
+      "source_path": null,
+      "transform": {
+        "location": [
+          0.0,
+          14.05,
+          3.17
+        ],
+        "rotation_euler": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "dimensions": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "state": {
+        "power_state": "ON",
+        "animation": "static"
+      }
+    },
+    {
+      "id": "ceilinglight_05_017",
+      "name": "CeilingLight_05",
+      "category": "ceiling_light",
+      "asset_type": "procedural_light_fixture",
+      "source_path": null,
+      "transform": {
+        "location": [
+          0.0,
+          17.8,
+          3.17
+        ],
+        "rotation_euler": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "dimensions": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "state": {
+        "power_state": "BROKEN",
+        "animation": "irregular_flicker"
+      }
+    },
+    {
+      "id": "ceilinglight_06_018",
+      "name": "CeilingLight_06",
+      "category": "ceiling_light",
+      "asset_type": "procedural_light_fixture",
+      "source_path": null,
+      "transform": {
+        "location": [
+          0.0,
+          21.55,
+          3.17
+        ],
+        "rotation_euler": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "dimensions": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "state": {
+        "power_state": "ON",
+        "animation": "static"
+      }
+    },
+    {
+      "id": "ceilinglight_07_019",
+      "name": "CeilingLight_07",
+      "category": "ceiling_light",
+      "asset_type": "procedural_light_fixture",
+      "source_path": null,
+      "transform": {
+        "location": [
+          0.0,
+          25.3,
+          3.17
+        ],
+        "rotation_euler": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "dimensions": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "state": {
+        "power_state": "OFF",
+        "animation": "static"
+      }
+    },
+    {
+      "id": "secretroom_greenstrobe_020",
+      "name": "SecretRoom_GreenStrobe",
+      "category": "secret_room_light",
+      "asset_type": "strobe_green",
+      "source_path": null,
+      "transform": {
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation_euler": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "state": {
+        "mode": "alternating_strobe",
+        "paired_with": "SecretRoom_RedStrobe"
+      }
+    },
+    {
+      "id": "secretroom_redstrobe_021",
+      "name": "SecretRoom_RedStrobe",
+      "category": "secret_room_light",
+      "asset_type": "strobe_red",
+      "source_path": null,
+      "transform": {
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation_euler": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "state": {
+        "mode": "alternating_strobe",
+        "paired_with": "SecretRoom_GreenStrobe"
+      }
+    },
+    {
+      "id": "neonsign_01_022",
+      "name": "NeonSign_01",
+      "category": "neon_sign",
+      "asset_type": "procedural_text",
+      "source_path": "C:\\Windows\\Fonts\\BRLNSR.TTF",
+      "transform": {
+        "location": [
+          -1.276,
+          24.8,
+          1.9
+        ],
+        "rotation_euler": [
+          1.5708,
+          -0.0,
+          1.5708
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "dimensions": [
+        1.898,
+        0.691,
+        0.0
+      ],
+      "state": {
+        "message": "Die",
+        "bloom_ready": true
+      }
+    },
+    {
+      "id": "neonsign_02_023",
+      "name": "NeonSign_02",
+      "category": "neon_sign",
+      "asset_type": "procedural_text",
+      "source_path": "C:\\Windows\\Fonts\\BRLNSR.TTF",
+      "transform": {
+        "location": [
+          1.276,
+          25.45,
+          2.35
+        ],
+        "rotation_euler": [
+          1.5708,
+          -0.0,
+          -1.5708
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "dimensions": [
+        1.898,
+        0.691,
+        0.0
+      ],
+      "state": {
+        "message": "You will last here",
+        "bloom_ready": true
+      }
+    },
+    {
+      "id": "neonsign_03_024",
+      "name": "NeonSign_03",
+      "category": "neon_sign",
+      "asset_type": "procedural_text",
+      "source_path": "C:\\Windows\\Fonts\\BRLNSR.TTF",
+      "transform": {
+        "location": [
+          1.276,
+          23.85,
+          1.45
+        ],
+        "rotation_euler": [
+          1.5708,
+          -0.0,
+          -1.5708
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "dimensions": [
+        1.898,
+        0.691,
+        0.0
+      ],
+      "state": {
+        "message": "The last choice",
+        "bloom_ready": true
+      }
+    },
+    {
+      "id": "vendingmachine_instance_025",
+      "name": "VendingMachine_Instance",
+      "category": "hero_prop",
+      "asset_type": "vending_machine",
+      "source_path": "realistic_vending_machine__3d_model\\scene.glb",
+      "transform": {
+        "location": [
+          -0.0092,
+          26.4871,
+          1.0537
+        ],
+        "rotation_euler": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale": [
+          0.0107,
+          0.0107,
+          0.0107
+        ]
+      },
+      "dimensions": [
+        1.1571,
+        1.5193,
+        2.15
+      ],
+      "state": {
+        "placement": "corridor_end"
+      }
+    },
+    {
+      "id": "wheelchair_instance_026",
+      "name": "Wheelchair_Instance",
+      "category": "hero_prop",
+      "asset_type": "wheelchair",
+      "source_path": "wheel_chair\\scene.gltf",
+      "transform": {
+        "location": [
+          0.0821,
+          14.56,
+          0.0057
+        ],
+        "rotation_euler": [
+          0.0,
+          -0.0,
+          0.3142
+        ],
+        "scale": [
+          0.042,
+          0.042,
+          0.042
+        ]
+      },
+      "dimensions": [
+        1.5578,
+        1.1382,
+        1.22
+      ],
+      "state": {
+        "placement": "corridor_mid",
+        "tilt_story": "hurried_push"
+      }
+    },
+    {
+      "id": "chairpile_01_027",
+      "name": "ChairPile_01",
+      "category": "secret_room_prop",
+      "asset_type": "chair_instance",
+      "source_path": "chair (1)\\scene.gltf",
+      "transform": {
+        "location": [
+          4.2822,
+          20.2715,
+          0.2948
+        ],
+        "rotation_euler": [
+          0.4918,
+          -0.1508,
+          2.7847
+        ],
+        "scale": [
+          0.1866,
+          0.1866,
+          0.1866
+        ]
+      },
+      "dimensions": [
+        1.9612,
+        1.2871,
+        1.277
+      ],
+      "state": {
+        "pile_group": "chaotic_broken_stack",
+        "instance_index": 1
+      }
+    },
+    {
+      "id": "chairpile_02_028",
+      "name": "ChairPile_02",
+      "category": "secret_room_prop",
+      "asset_type": "chair_instance",
+      "source_path": "chair (1)\\scene.gltf",
+      "transform": {
+        "location": [
+          3.7193,
+          19.9251,
+          0.2461
+        ],
+        "rotation_euler": [
+          0.9583,
+          -0.1255,
+          2.9159
+        ],
+        "scale": [
+          0.1904,
+          0.1904,
+          0.1904
+        ]
+      },
+      "dimensions": [
+        2.0071,
+        1.3361,
+        1.1746
+      ],
+      "state": {
+        "pile_group": "chaotic_broken_stack",
+        "instance_index": 2
+      }
+    },
+    {
+      "id": "chairpile_03_029",
+      "name": "ChairPile_03",
+      "category": "secret_room_prop",
+      "asset_type": "chair_instance",
+      "source_path": "chair\\scene.gltf",
+      "transform": {
+        "location": [
+          4.8474,
+          20.41,
+          1.7077
+        ],
+        "rotation_euler": [
+          1.3678,
+          0.2693,
+          -2.1214
+        ],
+        "scale": [
+          0.1101,
+          0.1101,
+          0.1101
+        ]
+      },
+      "dimensions": [
+        1.0333,
+        0.925,
+        0.7184
+      ],
+      "state": {
+        "pile_group": "chaotic_broken_stack",
+        "instance_index": 3
+      }
+    },
+    {
+      "id": "chairpile_04_030",
+      "name": "ChairPile_04",
+      "category": "secret_room_prop",
+      "asset_type": "chair_instance",
+      "source_path": "chair\\scene.gltf",
+      "transform": {
+        "location": [
+          3.7455,
+          20.9371,
+          1.3857
+        ],
+        "rotation_euler": [
+          -1.3351,
+          3.008,
+          -0.2696
+        ],
+        "scale": [
+          0.1123,
+          0.1123,
+          0.1123
+        ]
+      },
+      "dimensions": [
+        0.708,
+        1.1191,
+        0.7212
+      ],
+      "state": {
+        "pile_group": "chaotic_broken_stack",
+        "instance_index": 4
+      }
+    },
+    {
+      "id": "chairpile_05_031",
+      "name": "ChairPile_05",
+      "category": "secret_room_prop",
+      "asset_type": "chair_instance",
+      "source_path": "chair (1)\\scene.gltf",
+      "transform": {
+        "location": [
+          2.1617,
+          20.9105,
+          0.1248
+        ],
+        "rotation_euler": [
+          0.8737,
+          0.2393,
+          -1.7548
+        ],
+        "scale": [
+          0.2032,
+          0.2032,
+          0.2032
+        ]
+      },
+      "dimensions": [
+        1.355,
+        1.9312,
+        1.3706
+      ],
+      "state": {
+        "pile_group": "chaotic_broken_stack",
+        "instance_index": 5
+      }
+    },
+    {
+      "id": "chairpile_06_032",
+      "name": "ChairPile_06",
+      "category": "secret_room_prop",
+      "asset_type": "chair_instance",
+      "source_path": "chair\\scene.gltf",
+      "transform": {
+        "location": [
+          4.7949,
+          20.8797,
+          1.5864
+        ],
+        "rotation_euler": [
+          0.9616,
+          0.1692,
+          -0.8186
+        ],
+        "scale": [
+          0.1168,
+          0.1168,
+          0.1168
+        ]
+      },
+      "dimensions": [
+        1.0704,
+        1.0815,
+        1.0217
+      ],
+      "state": {
+        "pile_group": "chaotic_broken_stack",
+        "instance_index": 6
+      }
+    },
+    {
+      "id": "chairpile_07_033",
+      "name": "ChairPile_07",
+      "category": "secret_room_prop",
+      "asset_type": "chair_instance",
+      "source_path": "chair (1)\\scene.gltf",
+      "transform": {
+        "location": [
+          2.5143,
+          21.2656,
+          0.7765
+        ],
+        "rotation_euler": [
+          1.9334,
+          -0.2522,
+          0.8166
+        ],
+        "scale": [
+          0.1996,
+          0.1996,
+          0.1996
+        ]
+      },
+      "dimensions": [
+        1.9975,
+        2.0667,
+        1.2919
+      ],
+      "state": {
+        "pile_group": "chaotic_broken_stack",
+        "instance_index": 7
+      }
+    },
+    {
+      "id": "chairpile_08_034",
+      "name": "ChairPile_08",
+      "category": "secret_room_prop",
+      "asset_type": "chair_instance",
+      "source_path": "chair\\scene.gltf",
+      "transform": {
+        "location": [
+          4.2439,
+          20.17,
+          1.575
+        ],
+        "rotation_euler": [
+          0.9944,
+          0.1011,
+          0.5371
+        ],
+        "scale": [
+          0.1118,
+          0.1118,
+          0.1118
+        ]
+      },
+      "dimensions": [
+        0.9061,
+        1.1065,
+        0.9404
+      ],
+      "state": {
+        "pile_group": "chaotic_broken_stack",
+        "instance_index": 8
+      }
+    },
+    {
+      "id": "chairpile_09_035",
+      "name": "ChairPile_09",
+      "category": "secret_room_prop",
+      "asset_type": "chair_instance",
+      "source_path": "chair (1)\\scene.gltf",
+      "transform": {
+        "location": [
+          3.9579,
+          21.5505,
+          0.5158
+        ],
+        "rotation_euler": [
+          0.9698,
+          0.1353,
+          -2.0982
+        ],
+        "scale": [
+          0.1999,
+          0.1999,
+          0.1999
+        ]
+      },
+      "dimensions": [
+        1.8465,
+        2.0884,
+        1.1878
+      ],
+      "state": {
+        "pile_group": "chaotic_broken_stack",
+        "instance_index": 9
+      }
+    },
+    {
+      "id": "chairpile_10_036",
+      "name": "ChairPile_10",
+      "category": "secret_room_prop",
+      "asset_type": "chair_instance",
+      "source_path": "chair (1)\\scene.gltf",
+      "transform": {
+        "location": [
+          3.3381,
+          19.6158,
+          0.7912
+        ],
+        "rotation_euler": [
+          0.6583,
+          0.0453,
+          -0.6408
+        ],
+        "scale": [
+          0.1856,
+          0.1856,
+          0.1856
+        ]
+      },
+      "dimensions": [
+        1.897,
+        1.747,
+        1.1009
+      ],
+      "state": {
+        "pile_group": "chaotic_broken_stack",
+        "instance_index": 10
+      }
+    },
+    {
+      "id": "atmospherevolume_037",
+      "name": "AtmosphereVolume",
+      "category": "atmosphere_volume",
+      "asset_type": "volumetric_fog",
+      "source_path": null,
+      "transform": {
+        "location": [
+          1.47,
+          14.0,
+          1.56
+        ],
+        "rotation_euler": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "dimensions": [
+        2.0,
+        2.0,
+        2.0
+      ],
+      "state": {
+        "density": 0.042,
+        "mood": "claustrophobic_haze"
+      }
+    },
+    {
+      "id": "anxietycamera_038",
+      "name": "AnxietyCamera",
+      "category": "camera",
+      "asset_type": "cinematic_view",
+      "source_path": null,
+      "transform": {
+        "location": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "rotation_euler": [
+          0.0,
+          -0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "dimensions": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "state": {
+        "intent": "entrance_anxiety_view"
+      }
+    }
+  ],
+  "metadata": {
+    "software_detected": "Blender Python (bpy)",
+    "detection_basis": [
+      "Nessun file progetto Unity/Unreal/Godot rilevato",
+      "Asset 3D disponibili in formato glTF (.gltf/.bin)",
+      "Vault Obsidian presente nella root del progetto"
+    ],
+    "output_files": {
+      "json_latest": "Scene_Exports\\scene_entities.json",
+      "json_archive": "Scene_Exports\\scene_entities_20260418_173112.json",
+      "markdown_log": "Scene_Exports\\Procedural_Horror_Corridor_Log_20260418_173112.md"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+Model Information:
+* title:	Animated Injured Zombie Crawling Loop
+* source:	https://sketchfab.com/3d-models/animated-injured-zombie-crawling-loop-92e32f2303fa4a339590c243fd6c505a
+* author:	LasquetiSpice (https://sketchfab.com/LasquetiSpice)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Animated Injured Zombie Crawling Loop" (https://sketchfab.com/3d-models/animated-injured-zombie-crawling-loop-92e32f2303fa4a339590c243fd6c505a) by LasquetiSpice (https://sketchfab.com/LasquetiSpice) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

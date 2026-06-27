@@ -1,0 +1,11 @@
+Model Information:
+* title:	Wheel Chair
+* source:	https://sketchfab.com/3d-models/wheel-chair-379b5009f94b4996b5d14d5e287283c7
+* author:	Francesco Coldesina (https://sketchfab.com/topfrank2013)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Wheel Chair" (https://sketchfab.com/3d-models/wheel-chair-379b5009f94b4996b5d14d5e287283c7) by Francesco Coldesina (https://sketchfab.com/topfrank2013) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
