@@ -1,0 +1,12 @@
+{
+  "name": "corridor-00",
+  "version": "1.0.0",
+  "description": "Corridor 3D Web Viewer",
+  "main": "web_viewer/server.cjs",
+  "scripts": {
+    "start": "node web_viewer/server.cjs"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
